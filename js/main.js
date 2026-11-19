@@ -1,4 +1,4 @@
-// Caveman Decorations — interactions
+// Caveman Decorations — interactions + motion
 
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("header");
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
   const formNote = document.getElementById("formNote");
 
-  // Sticky header
+  // Sticky header + shadow
   const onScroll = () => {
     if (window.scrollY > 40) {
       header.classList.add("scrolled");
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Active section highlight
   const sections = document.querySelectorAll("section[id]");
-  const observer = new IntersectionObserver(
+  const observerNav = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -47,9 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { rootMargin: "-40% 0px -50% 0px" }
   );
-  sections.forEach((s) => observer.observe(s));
+  sections.forEach((s) => observerNav.observe(s));
 
-  // Contact form (front-end only)
+  // Contact form
   form?.addEventListener("submit", (e) => {
     e.preventDefault();
     formNote.hidden = false;
@@ -58,4 +58,28 @@ document.addEventListener("DOMContentLoaded", () => {
       formNote.hidden = true;
     }, 5000);
   });
+
+  // ===== Scroll Reveal =====
+  const revealTargets = document.querySelectorAll(
+    ".section, .service-card, .project-card, .step, .about-content, .about-visual, .contact-info, .contact-form, .stat"
+  );
+  revealTargets.forEach((el, i) => {
+    el.classList.add("reveal");
+    const delay = i % 4;
+    if (delay === 1) el.classList.add("reveal-d1");
+    if (delay === 2) el.classList.add("reveal-d2");
+    if (delay === 3) el.classList.add("reveal-d3");
+  });
+
+  const revealObs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -30px 0px" }
+  );
+  document.querySelectorAll(".reveal").forEach((el) => revealObs.observe(el));
 });

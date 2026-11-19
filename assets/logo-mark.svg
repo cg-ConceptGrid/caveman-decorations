@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Simplified brand mark inspired by Caveman Decorations logo -->
+  <rect width="64" height="64" rx="8" fill="none"/>
+  <!-- Organic abstract shapes -->
+  <path d="M18 48C14 38 20 28 28 30C24 18 36 12 42 22C38 10 52 8 54 20C58 14 66 20 60 32C66 38 58 50 48 46C52 56 38 60 34 50C28 56 16 52 18 48Z" fill="#A65D3F"/>
+  <path d="M26 42C24 34 30 30 36 34C34 26 42 24 44 32C48 28 54 32 50 40C54 44 48 50 42 46C40 52 30 50 32 42C28 46 22 44 26 42Z" fill="#C4785A" opacity="0.85"/>
+  <!-- Arch motif -->
+  <path d="M22 52 Q28 38 34 52" stroke="#8B4A32" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M38 50 Q44 36 50 50" stroke="#8B4A32" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Leaf accents -->
+  <ellipse cx="24" cy="24" rx="5" ry="9" fill="#A65D3F" transform="rotate(-25 24 24)"/>
+  <ellipse cx="52" cy="22" rx="4" ry="7" fill="#C4785A" transform="rotate(15 52 22)"/>
+</svg>
